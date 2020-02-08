@@ -469,11 +469,13 @@ $x_2 = Mx_1 = \left(\begin{matrix}0.565\\0.435\end{matrix}\right)$
 
 $\left(\begin{matrix}-0.4&0.3&0\\0.4&-0.3&0\end{matrix}\right) \sim \left(\begin{matrix}1&-3/4&0\\0&0&0\end{matrix}\right)$ 
 
-于是$x=x_2\left(\begin{matrix}3/4\\1\end{matrix}\right)$ 为P的稳态向量的通解，其中$x_2$ 为自由变量。
+于是$x=x_2\left(\begin{matrix}3/4\\1\end{matrix}\right)$ 为(P - I)x = 0的通解，其中$x_2$ 为自由变量。
+
+取$x_2 = 4$，然后将所得特解归一化后得到稳态向量：
+
+$q=\left(\begin{matrix}3/7\\4/7\end{matrix}\right)$ 
 
 ![](./pic/4.9.5.png)
-
-
 
 ## 6 正交性和最小二乘法
 
@@ -732,6 +734,42 @@ $\hat{x} = \left(\begin{matrix}2\\1/2\end{matrix}\right)$
 ![](./pic/6.5.11.png)
 
 ### 6.6 线形模型中的应用
+
+#### 最小二乘直线
+
+![](./pic/6.6.1.png)
+
+**例6.6.1**：求方程$y=\beta_0+\Beta_1x$ 的最小二乘直线，最佳拟合数据点为$(2, 1), (5, 2), (7, 3), (8, 3)$。
+
+解：用数据的x坐标构造X，用数据的y坐标向量y：
+
+ $X = \left(\begin{matrix}1&2\\1&5\\1&7\\1&8\end{matrix}\right), y = \left(\begin{matrix}1\\2\\3\\3\end{matrix}\right)$
+
+对$X\beta=y$ 的最小二乘解，只需解法方程
+
+$X^TX\beta=X^Ty$
+
+解之可得
+
+ $\beta = \left(\begin{matrix}2/7\\5/14\end{matrix}\right)$
+
+因此最小二乘直线的方程为$y=\frac{2}{7}+\frac{5}{14}x$
+
+![](./pic/6.6.2.png)
+
+#### 其它曲线的最小二乘拟合
+
+![](./pic/6.6.3.png)
+
+![](./pic/6.6.4.png)
+
+![](./pic/6.6.5.png)
+
+#### 多重回归
+
+![](./pic/6.6.6.png)
+
+![](./pic/6.6.7.png)
 
 ### 6.7 内积空间
 
