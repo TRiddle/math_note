@@ -86,6 +86,8 @@ $0x_1+0x_2+0x_3=5/2$
 
 ![](./pic/1.2.2.png)
 
+##### 定理1（简化阶梯形矩阵的唯一性）
+
 ![](./pic/1.2.3.png)
 
 #### 主元位置
@@ -127,6 +129,8 @@ $x_4$ 为自由变量
 $x_5=7$
 
 #### 存在与唯一性问题
+
+##### 定理2（存在与唯一性定理）
 
 ![](./pic/1.2.9.png)
 
@@ -176,11 +180,15 @@ $\left(\begin{matrix}3&-9&12&-9&6&15\\0&2&-4&4&2&-6\\0&0&0&0&1&4\end{matrix}\rig
 
 ![](./pic/1.4.2.png)
 
+##### 定理3
+
 ![](./pic/1.4.3.png)
 
 #### 解的存在性
 
 ![](./pic/1.4.4.png)
+
+##### 定理4
 
 ![](./pic/1.4.5.png)
 
@@ -193,6 +201,8 @@ $\left(\begin{matrix}3&-9&12&-9&6&15\\0&2&-4&4&2&-6\\0&0&0&0&1&4\end{matrix}\rig
 ![](./pic/1.4.8.png)
 
 #### 矩阵-向量积Ax的性质
+
+##### 定理5
 
 ![](./pic/1.4.9.png)
 
@@ -248,9 +258,11 @@ $x = \left(\begin{matrix}-1\\2\\0\end{matrix}\right) + \left(\begin{matrix}\frac
 
 ![](./pic/1.5.5.png)
 
+##### 定理6
+
 ![](./pic/1.5.6.png)
 
-**例1.5.4** ：证明定理6:
+**习题1.5.25** ：证明定理6:
 
 1. 设p是Ax=b的解，即Ap=b，设$v_h$ 为齐次方程$Ax=0$的解，$w=p+v_h$ 。证明w是Ax=b的解
 2. 设w是Ax=b的任意解，定义$v_h=w-p$，证明$v_h$ 是$Ax=0$ 的解，这说明，Ax=b的任意解有形式$w=p+v_h$ ，p是Ax=b的特解，$v_h$ 是Ax=0的解
@@ -318,9 +330,15 @@ $x = \left(\begin{matrix}x_1\\x_2\\x_3\\x_4\\x_5\end{matrix}\right) = \left(\beg
 
 ![](./pic/1.7.3.png)
 
+##### 定理7（线性相关集的特征）
+
 ![](./pic/1.7.4.png)
 
+##### 定理8
+
 ![](./pic/1.7.5.png)
+
+##### 定理9
 
 ![](./pic/1.7.6.png)
 
@@ -358,9 +376,19 @@ a. $\left(\begin{matrix}-2\\4\\6\\10\end{matrix}\right), \left(\begin{matrix}3\\
 
 ![](./pic/1.9.1.png)
 
+##### 定理10
+
 ![](./pic/1.9.2.png)
 
-**例2.2.2** ：设$T: R^2\rightarrow R^2$ 为把$R^2$ 中每个点逆时针旋转角度$\varphi$ 的变换。我们可以证明这个变换是线性变换，求出这个变换的标准矩阵
+**习题1.9.33**：证明定理10中A的唯一性。
+
+ 证明：设A为线性变换T的标准矩阵，由 $A = \left(\begin{matrix}T(e_1)&\dots&T(e_n)\end{matrix}\right)$ 定义，B满足T(x) = Bx。那么
+
+$A = \left(\begin{matrix}T(e_1)&\dots&T(e_n)\end{matrix}\right) = \left(\begin{matrix}b_1&\dots&b_n\end{matrix}\right) = B$
+
+因此，任意满足T(x) = Bx的矩阵B都与A相等，命题得证。
+
+**例1.9.3** ：设$T: R^2\rightarrow R^2$ 为把$R^2$ 中每个点逆时针旋转角度$\varphi$ 的变换。我们可以证明这个变换是线性变换，求出这个变换的标准矩阵
 
 解：因为 $\left(\begin{matrix}1\\0\end{matrix}\right)$ 旋转为 $\left(\begin{matrix}\cos\varphi\\\sin\varphi\end{matrix}\right)$， $\left(\begin{matrix}0\\1\end{matrix}\right)$ 旋转为 $\left(\begin{matrix}-\sin\varphi\\\cos\varphi\end{matrix}\right)$，所以根据定理10，这个变换的标准矩阵
 
@@ -374,17 +402,149 @@ a. $\left(\begin{matrix}-2\\4\\6\\10\end{matrix}\right), \left(\begin{matrix}3\\
 
 ![](./pic/1.9.5.png)
 
-
-
 #### 存在与唯一性问题
 
+![](./pic/1.9.6.png)
 
+![](./pic/1.9.7.png)
+
+**例1.9.4** ：设T是线性变换，其标准矩阵如下。问T是否把$R^4$ 映上到$R^3$ ？T是否是一对一映射？
+
+ $A = \left(\begin{matrix}1&-4&8&1\\0&2&-1&3\\0&0&0&5\end{matrix}\right)$
+
+解：显然A已经是阶梯形，那么根据定理2，对任意的$R^3$ 中的b，Ax=b都是相容的。也就是T是满设，或者说T把$R^4$ 映上到$R^3$。从阶梯形的A中还可以看出，Ax=b中存在自由变量，那么根据定理2，Ax=b的解不唯一，也就是说T不是一对一的。
+
+##### 定理11
+
+![](./pic/1.9.8.png)
+
+##### 定理12
+
+![](./pic/1.9.9.png)
 
 ### 1.10 经济学、科学和工程中的线性模型
 
+#### 构造有营养的减肥食谱
+
+![](./pic/1.10.1.png)
+
+#### 线性方程与电路网络
+
+![](./pic/1.10.2.png)
+
+**例1.10.2** ：确定图1-47中的回路电流$I_1, I_2, I_3$ 。
+
+解：对回路1，电流$I_1$ 通过3个电阻的电压降为$11I_1$，回路2的电流流过回路1的那部分电压降为$-3I_2$ ，因此回路1的电动势满足
+
+$11I_1-3I_2=30$
+
+同样地，回路2的电动势满足
+
+$-3I_1+6I_2-I_3=5$
+
+回路3的电动势满足
+
+$-I_2+3I_3=-25$
+
+解方程组可得$I_1=3,I_2=1,I_3=-8$。
+
+![](./pic/1.10.3.png)
+
+#### 差分方程
+
+![](./pic/1.10.4.png)
+
+![](./pic/1.10.5.png)
+
+![](./pic/1.10.6.png)
+
+**例1.10.3** ：设2000年城市人口为600 000，郊区人口为400 000，求上述区域2001年和2002年的人口
+
+解：200年的人口向量为 $x_0= \left(\begin{matrix}600000\\4000 00\end{matrix}\right)$ 
+
+$x_1 = Mx_0 = \left(\begin{matrix}582000\\4180 00\end{matrix}\right)$
+
+$x_2 = Mx_1 = \left(\begin{matrix}565440\\434560\end{matrix}\right)$
+
 ## 2 矩阵代数
 
+### 2.1 矩阵运算
+
+#### 和与标量乘法
+
+##### 定理1
+
+![](./pic/2.1.1.png)
+
+#### 矩阵乘法
+
+![](./pic/2.1.2.png)
+
+![](./pic/2.1.3.png)
+
+![](./pic/2.1.4.png)
+
+![](./pic/2.1.5.png)
+
+![](./pic/2.1.6.png)
+
+#### 矩阵乘法的性质
+
+##### 定理2
+
+![](./pic/2.1.7.png)
+
+![](./pic/2.1.8.png)
+
+**习题 2.1.10** ：证明虽然AB=AC但$B\ne C$，其中
+
+$A = \left(\begin{matrix}2&-3\\-4&6\end{matrix}\right), B = \left(\begin{matrix}8&4\\5&5\end{matrix}\right), C = \left(\begin{matrix}5&-2\\3&1\end{matrix}\right)$
+
+证明：$AB = \left(\begin{matrix}1&-7\\-2&14\end{matrix}\right), AC = \left(\begin{matrix}1&-7\\-2&14\end{matrix}\right)$，显然AB=AC但$B\ne C$ 
+
+ **习题 2.1.11** ：计算AD和DA，说明当A右乘或左乘D时，A的行或列如何变化。求出$3\times 3$ 对角矩阵B，不是单位矩阵或零矩阵，使得AB=BA。其中
+
+$A = \left(\begin{matrix}1&1&1\\1&2&3\\1&4&5\end{matrix}\right), D = \left(\begin{matrix}2&0&0\\0&3&0\\0&0&5\end{matrix}\right)$
+
+解：A右乘D时，A的第j列会变为原来的$D_{jj}$倍。A左乘D时，A的第i行会变为原来的$D_{ii}$ 倍。设矩阵B为
+
+$B = \left(\begin{matrix}x_1&0&0\\0&x_2&0\\0&0&x_3\end{matrix}\right)$
+
+由AB = BA可得$x_1=x_2=x_3$ ，于是任何对角线元素相等的对角矩阵B都能令AB = BA。这时无论A时左乘B还是右乘B，都等价于让A的所有元素都乘上一个相同的标量（下一节说明了左乘、右乘矩阵与初等行变换、列变换的关系）。
+
+**习题 2.1.12** ：求$2\times 2$ 矩阵B使AB=0，要求B有两个不同的非零列，其中
+
+$A = \left(\begin{matrix}3&-6\\-1&2\end{matrix}\right)$
+
+解：AB = 0等价于：对B的两列$b_1, b_2$，有$Ab_1 = 0, Ab_2 = 0$。根据题意，我们应该在A的零空间内寻找两个不相同的向量解Ax = 0得
+
+$x = \left(\begin{matrix}2\\1\end{matrix}\right)x_2$
+
+于是B可以是$\left(\begin{matrix}2&4\\1&2\end{matrix}\right)$
+
+#### 矩阵的乘幂
+
+![](./pic/2.1.9.png)
+
+#### 矩阵的转置
+
+##### 定理3
+
+![](./pic/2.1.10.png)
+
+**习题 2.1.33** ：证明定理3d
+
+证明：设有矩阵A，B，其中$a_i$为A的第i列，$b_j$ 为B的第j列。
+
+ $(AB)^T$ 的第j行是$AB$ 的第j列，也就是$Ab_j$ ，$Ab_j$ 的第i个元素是$a_i^Tb_j$。
+
+$B^TA^T$ 的第j行是$b_j^TA^T$，$b_j^TA^T$ 的第i个元素为$b_j^Ta_i$ 。
+
+显然$a_i^Tb_j=b_j^Ta_i$ ，故$Ab_j=b_j^TA^T$ ，进而$(AB)^T=B^TA^T$。
+
 ### 2.2 矩阵的逆
+
+##### 定理4
 
 ![](./pic/2.2.1.png)
 
@@ -395,6 +555,8 @@ a. $\left(\begin{matrix}-2\\4\\6\\10\end{matrix}\right), \left(\begin{matrix}3\\
 解：$det A = -2 \ne 0$ ，故A可逆，且
 
 $A^{-1} = -\frac{1}{2}\left(\begin{matrix}6&-4\\-5&3\end{matrix}\right) = \left(\begin{matrix}-3&2\\\frac{5}{2}&-\frac{3}{2}\end{matrix}\right)$ 
+
+##### 定理5
 
 ![](./pic/2.2.3.png)
 
@@ -409,6 +571,8 @@ $3x_1+4x_2=3\\5x_1+6x_2=7$
  $Ax = \left(\begin{matrix}3&4\\5&6\end{matrix}\right)\left(\begin{matrix}x_1\\x_2\end{matrix}\right)=\left(\begin{matrix}3\\7\end{matrix}\right) = b$ 
 
 $x = A^{-1}b = \left(\begin{matrix}-3&2\\\frac{5}{2}&-\frac{3}{2}\end{matrix}\right)\left(\begin{matrix}3\\7\end{matrix}\right) = \left(\begin{matrix}5\\-3\end{matrix}\right)$ 
+
+##### 定理6
 
 ![](./pic/2.2.4.png)
 
@@ -428,13 +592,37 @@ $x = A^{-1}b = \left(\begin{matrix}-3&2\\\frac{5}{2}&-\frac{3}{2}\end{matrix}\ri
 
 $E^{-1} = \left(\begin{matrix}1&0&0\\0&1&0\\4&0&1\end{matrix}\right)$
 
-#### 求$A^{-1}$ 的算法 
+##### 定理7
 
 ![](./pic/2.2.9.png)
 
+  **例2.2.7** 证明定理7
+
+证明：
+
+1. 若方阵A是可逆的，根据定理5，Ax=b必有唯一解，进而根据第一章1.4节的定理4，A的每行都有主元。根据主元的定义，因为A是每行都有主元方阵，所以A的主元都在其对角线上，进而A的简化阶梯形是$I_n$ ，即$A\sim I_n$
+
+2. 若$A\sim I_n$，，根据上面方框中的事实，存在一系列可逆的初等矩阵，使得
+
+   $E_p\dots E_1 A = I_n \tag{1}$
+
+   等式两边同时乘初等矩阵的逆矩阵可得
+
+   $A = (E_p\dots E_1)^{-1} \tag{2}$
+
+    于是A是可逆的，根据定理6，它的逆为$E_p\dots E_1$ 
+
+3. 等式(2)的两侧同时取逆再乘$I_n$可得
+
+   $A^{-1} = (E_p\dots E_1)I_n \tag{3}$
+
+   综合等式(1)和(3)，可知把A变为$I_n$ 的一系列初等行变换可以同时把$I_n$ 变成$A^{-1}$
+
+#### 求$A^{-1}$ 的算法 
+
 ![](./pic/2.2.10.png)
 
-  **例2.2.7**：若矩阵 $ \left(\begin{matrix}0&1&2\\1&0&3\\4&-3&8\end{matrix}\right)$ 的逆存在的话，求其逆
+  **例2.2.8**：若矩阵 $ \left(\begin{matrix}0&1&2\\1&0&3\\4&-3&8\end{matrix}\right)$ 的逆存在的话，求其逆
 
 解： $ \left(\begin{matrix}A&I\end{matrix}\right) = \left(\begin{matrix}0&1&2&1&0&0\\1&0&3&0&1&0\\4&-3&8&0&0&1\end{matrix}\right) \sim \left(\begin{matrix}1&0&0&-9/2&7&-3/2\\0&1&0&-2&4&-1\\0&0&1&3/2&-2&1/2\end{matrix}\right)$
 
@@ -445,6 +633,10 @@ $A^{-1} = \left(\begin{matrix}-9/2&7&-3/2\\-2&4&-1\\3/2&-2&1/2\end{matrix}\right
 #### 逆矩阵的另一个观点
 
 ![](./pic/2.2.11.png)
+
+### 2.3 可逆矩阵的特征
+
+
 
 ## 3 行列式
 
