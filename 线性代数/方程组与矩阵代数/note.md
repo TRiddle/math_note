@@ -839,3 +839,147 @@ $x \approx \left(\begin{matrix}226\\119\\78\end{matrix}\right)$
 
 ## 3 行列式
 
+![](./pic/3.1.1.png)
+
+![](./pic/3.1.2.png)
+
+### 3.1 行列式介绍
+
+![](./pic/3.1.3.png)
+
+![](./pic/3.1.4.png)
+
+**例3.1.1**：计算det A，其中
+
+$A = \left(\begin{matrix}1&5&0\\2&4&-1\\0&-2&0\end{matrix}\right)$
+
+解：$\det A = a_{11}\det A_{11} - a_{12}\det A_{12} + a_{13}\det A_{13} = -2 - 0 + 0 = -2$
+
+##### 定理1
+
+![](./pic/3.1.5.png)
+
+![](./pic/3.1.6.png)
+
+**例3.1.2**：计算det A，其中
+
+$A = \left(\begin{matrix}3&-7&8&9&6\\0&2&-5&7&3\\0&0&1&5&0\\0&0&2&4&-1\\0&0&0&-2&0\end{matrix}\right)$
+
+解：观察矩阵A，发现第一列的0元素最多，因此按照第一列将det A 展开
+
+$\det A = 3C_{11}$
+
+观察$A_{11}$ ，发现第一列的0元素最多，因此按照第一列将$C_{11}$ 展开
+
+$\det A = 3 \det A_{11} = 6 \det \left(\begin{matrix}1&5&0\\2&4&-1\\0&-2&0\end{matrix}\right)$
+
+如法炮制，把等式最右侧的行列式按照第三列展开
+
+$\det A = 6 \det \left(\begin{matrix}1&5&0\\2&4&-1\\0&-2&0\end{matrix}\right) = 6 \det \left(\begin{matrix}1&5\\0&-2\end{matrix}\right) = -12$
+
+##### 定理2
+
+![](./pic/3.1.7.png)
+
+### 3.2 行列式的性质
+
+##### 定理3
+
+![](./pic/3.2.1.png)
+
+**例3.2.1**：计算det A，其中
+
+$A = \left(\begin{matrix}1&-4&2\\-2&8&-9\\-1&7&0\end{matrix}\right)$
+
+解：利用定理3将行列式做行变换，得到三角阵的行列式，然后利用定理2计算行列式
+
+$\det A = \det \left(\begin{matrix}1&-4&2\\0&0&-5\\0&3&2\end{matrix}\right) = -\det \left(\begin{matrix}1&-4&2\\0&3&2\\0&0&-5\end{matrix}\right) = 15$
+
+![](./pic/3.2.2.png)
+
+##### 定理4
+
+![](./pic/3.2.3.png)
+
+#### 列变换
+
+##### 定理5
+
+![](./pic/3.2.4.png)
+
+#### 行列式与矩阵乘积
+
+##### 定理6（乘法的性质）
+
+![](./pic/3.2.5.png)
+
+![](./pic/3.2.6.png)
+
+#### 行列式函数的一个线性性质
+
+![](./pic/3.2.7.png)
+
+### 3.3. 克拉默法则、体积和线性变换
+
+#### 克拉默法则
+
+##### 定理7（克拉默法则）
+
+![](./pic/3.3.1.png)
+
+![](./pic/3.3.2.png)
+
+**例3.3.1**：用克拉默法则解下列方程组
+
+$3x_1-2x_2=6\\-5x_1+4x_2=8$
+
+解：将此方程组视为Ax=b，则有
+
+$A = \left(\begin{matrix}3&-2\\-5&4\end{matrix}\right), b = \left(\begin{matrix}6\\8\end{matrix}\right), A_1(b) = \left(\begin{matrix}6&-2\\8&4\end{matrix}\right), A_2(b) = \left(\begin{matrix}3&6\\-5&8\end{matrix}\right)$
+
+根据克拉默法则
+
+$x_1 = \frac{\det A_1(b)}{\det A} = \frac{40}{2} = 20$
+
+$x_2 = \frac{\det A_2(b)}{\det A} = \frac{54}{2} = 27$
+
+#### 在工程上的应用
+
+![](./pic/3.3.3.png)
+
+#### 一个求$A^{-1}$ 的公式
+
+##### 定理8（逆矩阵公式）
+
+![](./pic/3.3.4.png)
+
+![](./pic/3.3.5.png)
+
+**例3.3.3**：求矩阵A的逆，其中
+
+$A = \left(\begin{matrix}2&1&3\\1&-1&1\\1&4&-2\end{matrix}\right)$
+
+解：先求A的行列式
+
+$\det A = \det \left(\begin{matrix}0&3&1\\1&-1&1\\0&5&-3\end{matrix}\right) = -\det \left(\begin{matrix}3&1\\5&-3\end{matrix}\right) = 14$
+
+再求余因子矩阵的元素
+
+$C_{11} = -2, C_{12} = 3, C_{13} = 5$
+
+$C_{21} = 14, C_{22} = -7, C_{23} = -7$
+
+$C_{31} = 4, C_{32} = 1, C_{33} = -3$
+
+然后求伴随矩阵（记得将余因子矩阵转置）
+
+$adj A = \left(\begin{matrix}-2&14&4\\3&-7&1\\5&-7&-3\end{matrix}\right)$
+
+最后求逆矩阵
+
+$A^{-1} = \frac{1}{\det A}adjA = \left(\begin{matrix}-1/7&1&2/7\\3/14&-1/2&1/14\\5/14&-1/2&-3/14\end{matrix}\right)$
+
+#### 用行列式表示面积或体积
+
+
+
