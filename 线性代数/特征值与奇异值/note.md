@@ -40,7 +40,9 @@ $\left\{\left(\begin{matrix}1/2\\1\\0\end{matrix}\right),\left(\begin{matrix}-3\
 
 ![](./pic/5.1.4.png)
 
- ![](./pic/5.1.5.png)
+ ##### 定理1
+
+![](./pic/5.1.5.png)
 
 **例5.1.5**：证明定理1
 
@@ -49,6 +51,8 @@ $\left\{\left(\begin{matrix}1/2\\1\\0\end{matrix}\right),\left(\begin{matrix}-3\
 $A-\lambda I = \left(\begin{matrix}a_{11}-\lambda&a_{12}&a_{13}\\0&a_{22}-\lambda&a_{23}\\0&0&a_{33}-\lambda\end{matrix}\right)$
 
 数$\lambda$ 是A的特征值当且仅当方程$(A-\lambda I)x=0$ 有非平凡解。根据上式，当$\lambda$ 为A的主对角线上的元素时，矩阵$A-\lambda I$主对角线上存在0，此时方程$(A-\lambda I)x=0$ 有自由变量，也就是有非平凡解。故此时$\lambda$ 为A的特征值。同理可证A为下三角矩阵或任意大小三角矩阵情形下的定理1。
+
+##### 定理2
 
 ![](./pic/5.1.6.png)
 
@@ -94,6 +98,8 @@ $det(A - \lambda I) = det\left(\begin{matrix}2- \lambda&3\\3&-6- \lambda\end{mat
 
 ![](./pic/5.2.1.png)
 
+##### 定理3
+
 ![](./pic/5.2.2.png)
 
 **例5.2.2**：计算 $A = \left(\begin{matrix}1&5&0\\2&4&-1\\0&-2&0\end{matrix}\right)$ 的行列式det A
@@ -126,11 +132,15 @@ $\lambda^6-4\lambda^5-12\lambda^4 = \lambda^4(\lambda-6)(\lambda+2)$
 
 #### 相似性
 
+##### 定理4
+
 ![](./pic/5.2.5.png)
 
 ![](./pic/5.2.6.png)
 
 ### 5.3 对角化
+
+##### 定理5（对角化定理）
 
 ![](./pic/5.3.1.png)
 
@@ -168,6 +178,8 @@ $Av_1 = \lambda_1v_1, \dots, Av_n = \lambda_nv_n$
 2. 求A的3个线性无关的特征向量：解$(A-I)x = 0$ 得特征值$\lambda_1=1$的基为$v_1=\left(\begin{matrix}1\\-1\\1\end{matrix}\right)$，解$(A+2I)x = 0$得特征值 $\lambda_2=-2$的基为$v_2=\left(\begin{matrix}-1\\1\\0\end{matrix}\right),v_3=\left(\begin{matrix}-1\\0\\1\end{matrix}\right)$，可以验证$\{v_1, v_2, v_3\}$ 是线性无关的
 3. 构造矩阵P：$P = \left(\begin{matrix}v_1, v_2, v_3\end{matrix}\right) = \left(\begin{matrix}1&-1&-1\\-1&1&0\\1&0&1\end{matrix}\right)$
 4. 用对应的特征值构造矩阵D：$D = \left(\begin{matrix}1&0&0\\0&-2&0\\0&0&-2\end{matrix}\right)$
+
+##### 定理6
 
 ![](./pic/5.3.2.png)
 
@@ -237,15 +249,77 @@ $[T]_B = P^{-1}AP = \left(\begin{matrix}-2&1\\0&-2\end{matrix}\right)$
 
 ### 5.5 复特征值
 
+![](./pic/5.5.1.png)
+
+![](./pic/5.5.2.png)
+
+**例5.5.2**：设$A = \left(\begin{matrix}0.5&-0.6\\0.75&1.1\end{matrix}\right)$ ，求A的特征值及每个特征空间的基
+
+解：特征值是特征方程的根，A的特征方程是
+
+$0 = \det \left(\begin{matrix}0.5-\lambda&-0.6\\0.75&1.1-\lambda\end{matrix}\right) = \lambda^2-1.6\lambda+1$
+
+解之得$\lambda=0.8\pm 0.6i$ 
+
+对$0.8-0.6i$ ，构造
+
+$A-(0.8-0.6i)I = \left(\begin{matrix}-0.3+0.6i&-0.6\\0.75&0.3+0.6i\end{matrix}\right)$
+
+接下来应该对矩阵进行行化简，以求矩阵的零空间，也就是特征值的特征空间。不过存在更简便的方法：因为0.8-0.6i是特征值，所以一定存在特征向量（特征向量不会是零向量）与之对应，也就是说 $(A-(0.8-0.6i)I)x = 0$ 一定有非平凡解，从而矩阵$A-(0.8-0.6i)I$必定行线性相关。根据矩阵的第一行就可以看出，特征值0.8-0.6i对应的特征空间的基为
+
+$v_1 = \left(\begin{matrix}-2-4i\\5\end{matrix}\right)$
+
+同理，对$0.8+0.6i$ ，可求出其对应的特征空间的基
+
+$v_2 = \left(\begin{matrix}-2+4i\\5\end{matrix}\right)$
+
+![](./pic/5.5.3.png)
+
+![](./pic/5.5.4.png)
+
+#### 向量的实部和虚部
+
+![](./pic/5.5.5.png)
+
+#### 作用于$C^n$ 上的实矩阵的特征值和特征向量
+
+![](./pic/5.5.6.png)
+
+![](./pic/5.5.7.png)
+
+##### 定理9
+
+![](./pic/5.5.8.png)
+
 ### 5.6 离散动力系统
+
+#### 捕食者-食饵系统
+
+#### 变量代换
+
+#### 复特征值
+
+#### 斑点猫头鹰的生存
 
 ### 5.7 微分方程中的应用
 
+#### 解耦动力系统
+
+#### 复特征值
+
 ### 5.8 特征值的迭代估计
+
+#### 幂算法
+
+#### 逆幂法
 
 ## 7 对称矩阵和二次型
 
 ### 7.1 对称矩阵的对角化
+
+##### 定理1
+
+##### 定理2
 
 ![](./pic/7.1.1.png)
 
@@ -268,6 +342,8 @@ $P = \left(\begin{matrix}u_1&u_2&u_3\end{matrix}\right) =\left(\begin{matrix}1/\
 可得正交对角化结果：$A=PDP^{-1}$
 
 #### 谱分解
+
+##### 定理3（对称矩阵的谱定理）
 
 ![](./pic/7.1.4.png)
 
@@ -295,6 +371,8 @@ $Q(x) = x^TAx = \left(\begin{matrix}x_1&x_2&x_3\end{matrix}\right) \left(\begin{
 
 ![](./pic/7.2.2.png)
 
+（“变量代换”可以看成“坐标变换”）
+
 **例7.2.4**：对属于$R^3$ 的x，取$Q(x)=x_1^2-8x_1x_2-5x_2^2$，求一个变量代换将其变为一个没有交叉项的二次型。
 
 解：先将二次型矩阵求出来：
@@ -311,6 +389,8 @@ $P = \left(\begin{matrix}2/\sqrt{5}&1/\sqrt{5}\\-1\sqrt{5}&2\sqrt{5}\end{matrix}
 
 ![](./pic/7.2.3.png)
 
+##### 定理4（主轴定理）
+
 ![](./pic/7.2.4.png)
 
 #### 主轴的几何意义
@@ -323,6 +403,8 @@ $P = \left(\begin{matrix}2/\sqrt{5}&1/\sqrt{5}\\-1\sqrt{5}&2\sqrt{5}\end{matrix}
 
 #### 二次型的分类
 
+##### 定理5（二次型与特征值）
+
 ![](./pic/7.2.6.png)
 
 ![](./pic/7.2.7.png)
@@ -331,9 +413,75 @@ $P = \left(\begin{matrix}2/\sqrt{5}&1/\sqrt{5}\\-1\sqrt{5}&2\sqrt{5}\end{matrix}
 
 ![](./pic/7.3.1.png)
 
+**例7.3.1**：求$Q(x) = 9x_1^2+4x_2^2+3x_3^2$ 在限制条件$x^Tx=1$ 下的最大值和最小值
+
+解：我们先构造Q(x)的上界和下界，再通过证明x取某个值时上界和下界是可达到的，就求出了Q(x)的最大值和最小值。
+
+显然$x_2^2, x_3^2$ 是非负的，所以 $4x_2^2 \le9x_2^2, 3x_3^2 \le 9x_3^2$，进而
+
+$Q(x) = 9x_1^2+4x_2^2+3x_3^2$ 
+
+$\le 9x_1^2+9x_2^2+9x_3^2$ 
+
+$= 9(x_1^2+x_2^2+x_3^2) = 9$ 
+
+这时Q(x)的上界，当$x = (1, 0, 0)^T$时，Q(x) = 9，因此9为Q(x)的最大值
+
+显然$x_2^2, x_3^2$ 是非负的，所以 $9x_1^2\ge3x_2^2,\ 4x_2^2 \ge 3x_2^2$，进而
+
+$Q(x) = 9x_1^2+4x_2^2+3x_3^2$ 
+
+$\ge 3x_1^2+3x_2^2+3x_3^2$ 
+
+$= 3(x_1^2+x_2^2+x_3^2) = 1$ 
+
+这时Q(x)的下界，当$x = (1, 0, 0)^T$时，Q(x) = 3，因此3为Q(x)的最大值
+
 ![](./pic/7.3.2.png)
 
+**习题7.3.12**：设$\lambda$ 是矩阵A的一个特征值，$m = \min\{x^TAx:\|x\|=1\}, M = \max\{x^TAx:\|x\|=1\}$，验证$m\le\lambda\le M$ 。
+
+证明：当x取$\lambda$ 对应的单位特征向量时，$x^TAx=x^T\lambda x=\lambda$ 。因为在x取单位向量时$x^TAx$ 的最大最小值分别为m和M，所以$m\le\lambda\le M$。
+
+##### 定理6
+
 ![](./pic/7.3.3.png)
+
+**例7.3.2**：证明定理6
+
+证明：（思路：$x^TAx$ 的最大值与最小值比较难求，但通过例7.3.1能看出$y^TDy$的最大值与最小值比较好求）
+
+不失一般性，不妨设A是以$a\ge b\ge c$ 为特征值的$3\times3$ 矩阵。因为A是对称矩阵，所以A可正交对角化。也就是$A = PDP^{-1}$，其中矩阵P的列是由A的正交单位特征向量构成的。重排P的列，使得$P = \left(\begin{matrix}u_1&u_2&u_3\end{matrix}\right)$ ，若用P做变量代换x = Py，则有
+
+$\|x\|=\|Py\|$
+
+尝试分析$\|Py\|$，实际上就是分析$\|Py\|^2$ 
+
+$\|Py\|^2 = (Py)^TPy = y^TP^TPy = y^Ty = \|y\|^2$
+
+从而有
+
+$\|x\|=\|y\|$
+
+也就是说实际上x的取值集合跟y的取值集合完全相同，对于二次型$x^TAx$ 有
+
+$x^TAx = (Py)^TAPy = y^TP^TAPy = y^TDy$
+
+因为x的取值集合跟y的取值集合完全相同，所以$x^TAx$ 和$y^TDy$ 的取值集合也完全相同。进而证明$x^TAx$的最大最小值同$y^TDy$ 的最大最小值相同。注意到
+
+$y^TDy = ay_1^2+by_2^2+cy_3^2$
+
+并且$by_2^2\le ay_2^2, cy_3^2\le ay_3^2$，故
+
+$y^TDy \le a(y_1^2+y_2^2+y_3^2)=a$
+
+当$y=P^Tu_1 = (1, 0, 0)^T$时，$y^TDy=a$，也就是说当$x=u_1$时$x^TAx$ 能够取到最大值a
+
+同理
+
+$y^TDy \ge c(y_1^2+y_2^2+y_3^2)=c$
+
+当$y=P^Tu_3 = (0, 0, 1)^T$时，$y^TDy=c$，也就是说当$x=u_3$时$x^TAx$ 能够取到最小值c
 
 **例7.3.3**：令$A = \left(\begin{matrix}3&2&1\\2&3&1\\1&1&4\end{matrix}\right)$，求二次型$x^TAx$ 在限制条件$x^Tx=1$ 下的最大值，以及一个可以取到该最大值的单位向量
 
@@ -345,6 +493,8 @@ $0=-(\lambda-6)(\lambda-3)(\lambda-1)$
 
 故二次型在$u_1$ 处可以取得最大值$\lambda_1$
 
+##### 定理7
+
 ![](./pic/7.3.4.png)
 
 **例7.3.5**：令$A = \left(\begin{matrix}3&2&1\\2&3&1\\1&1&4\end{matrix}\right)$，已知$u_1$ 为A的最大特征值的特征向量，求二次型$x^TAx$ 在限制条件$x^Tx=1, x^Tu_1=0$ 下的最大值，以及一个可以取到该最大值
@@ -354,6 +504,8 @@ $0=-(\lambda-6)(\lambda-3)(\lambda-1)$
 $0=-(\lambda-6)(\lambda-3)(\lambda-1)$
 
 根据定理7，所求最大值为第二大的特征值3
+
+##### 定理8
 
 ![](./pic/7.3.5.png)
 
