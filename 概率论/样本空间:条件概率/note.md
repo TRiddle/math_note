@@ -115,11 +115,69 @@ $\log p \approx \frac{1 + 2 + \cdots + (r - 1)}{365} = -\frac{r(r - 1)}{730}$
 
 ## 5.2 用条件概率所定义的概率 罐子模型
 
+![](./pic/5.2.1.png)
 
+![](./pic/5.2.2.png)
+
+![](./pic/5.2.3.png)
+
+![](./pic/5.2.4.png)
+
+**例5.2.1** 考虑下列罐子模型
+
+1. 波利亚罐子模型，传染病：当$d=0,c>0$时，求先取出$n_1$ 个黑球再取出$n_2$ 个红球($n_1 + n_2 = n$)的概率
+2. 层迭的罐子模型，假传染：有两个罐子，它们存放的球的比例为1:5。第一个罐子有$r_1$个红球与$b_1$个黑球，第二个罐子含有$r_2$个红球与$b_2$个黑球。求随机有放回地抽取出序列红，红(RR)的概率
+3. 拉普拉斯延续率：有N+1个罐子，每个罐子都有N个球，在第k号罐子中有k个红球和N-K个白球($k = 0, 1, 2, \cdots, N$)。从罐子中任选一罐，并从这个罐子中作有放回的n次抽取。假设取出的n个球都是红球（事件A）求在下次抽取中仍然抽取出红球（时间B）的（条件）概率
+
+（除此之外，著名的罐子模型还包括：用$c=-1,d=1$描述两个隔离壁之间的热交换的埃伦费斯特模型；用$c=0,d>0$描述每当发生了事故安全运行就抓紧些，而每当没有的事故放生时，安全运行就放松些的安全运行模型）
+
+解：
+
+1. 从式子(2.2)可知，序列BB的概率为
+
+   $P(BB) = P(B)P(B\mid B) = \frac{b}{b+r}\frac{b+c}{b+r+c}$
+
+   序列B...B（$n_1$个B）的概率为
+
+   $P(B\dots B) = \frac{b}{b+r}\frac{b+c}{b+r+c}\dots \frac{b+n_1c-c}{b+r+n_1c-c}$
+
+   序列B...BR的概率为
+
+   $P(B\dots BR)=P(B\dots B)P(R|B\dots B) = \frac{b}{b+r}\frac{b+c}{b+r+c}\dots \frac{b+n_1c-c}{b+r+n_1c-c}\cdot\frac{r}{b+r+n_1c-c}$
+
+   序列B...BRR的概率为
+
+   $P(B\dots BR)=P(B\dots B)P(R|B\dots B) = \frac{b}{b+r}\frac{b+c}{b+r+c}\dots \frac{b+n_1c-c}{b+r+n_1c-c}\cdot\frac{r}{b+r+n_1c-c}\frac{r+c}{b+r+(n_1+1)c-c}$
+
+   序列B...BR...R（$n_1$ 个B，$n_2$ 个R）的概率为
+
+   $P(B\dots BR\dots R) = \frac{b}{b+r}\frac{b+c}{b+r+c}\dots \frac{b+n_1c-c}{b+r+n_1c-c}\cdot\frac{r}{b+r+n_1c-c}\frac{r+c}{b+r+(n_1+1)c-c}\dots\frac{r+n_2c-c}{b+r+nc-c}$
+
+   （分子分母同乘$\binom{n}{n_1}$ ，利用广义二项式系式可将式子简化成：$p_{n_1, n} = \frac{\binom{n_1-1+b/c}{n_1}\binom{n_2-1+r/c}{n_2}}{\binom{n-1+(b+r)/c}{n}}= \frac{\binom{-b/c}{n_1}\binom{-r/c}{n_2}}{\binom{-(b+r)/c}{n}}$）
+
+2. 在第一个罐子中抽中红球的概率加上在第二个罐子中抽中红球的概率可得 $P(R) = \frac{1}{6}\frac{r_1}{b_1+r_1}+\frac{5}{6}\frac{r_2}{b_2+r_2}$
+
+   同理$P(RR) = \frac{1}{6}(\frac{r_1}{b_1+r_1})^2+\frac{5}{6}(\frac{r_2}{b_2+r_2})^2$
+
+3. 假设选中的是第k号罐子，那么在以后n次取球中都出现红球的概率是$(\frac{k}{N})^n$ 因此
+
+   $P(A) = \frac{1}{N+1}\frac{1^n+2^n+\cdots+N^n}{N^n}$
+
+   简单地增加n，可得
+
+   $P(AB) = P(B) = \frac{1}{N+1}\frac{1^{(n+1)}+2^{(n+1)}+\cdots+N^{(n+1)}}{N^{(n+1)}}$
+
+   所求概率为$P(B\mid A) = P(B) = \frac{P(B)}{P(A)}$
+
+   当N相当大时，可以考虑用黎曼和来近似：
+
+   $P(A) = \frac{1}{N+1}\frac{1^n+2^n+\cdots+N^n}{N^n} \approx \frac{1}{N^n(N+1)}\int_0^Nx^ndx = \frac{1}{N^n(N+1)}\frac{N^{n+1}}{n+1} = \frac{N}{(N+1)(n+1)} \approx \frac{1}{n+1}$
+
+   $P(B) \approx \frac{1}{n+2}$
+
+   $P(B\mid A) = \frac{n+1}{n+2}$
 
 ## 5.3 随机独立性
-
-
 
 ## 5.4 乘积空间 独立试验
 
